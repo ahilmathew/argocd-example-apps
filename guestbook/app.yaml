@@ -13,5 +13,5 @@ spec:
     path: guestbook/manifests
     repoURL: 'git@github.com:ahilmathew/argocd-example-apps.git'
     targetRevision: master
-  project: project-flame
+  project: default
 
