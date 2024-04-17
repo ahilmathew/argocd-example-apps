@@ -14,4 +14,7 @@ spec:
     repoURL: 'git@github.com:ahilmathew/argocd-example-apps.git'
     targetRevision: master
   project: default
-
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
