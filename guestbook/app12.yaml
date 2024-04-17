@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-aoa
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: guestbook/manifests
+    repoURL: 'git@github.com:ahilmathew/argocd-example-apps.git'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
