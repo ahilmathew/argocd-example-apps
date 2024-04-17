@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: guestbook/manifests
+    repoURL: 'git@github.com:ahilmathew/argocd-example-apps.git'
+    targetRevision: main
+  project: project-flame
+
