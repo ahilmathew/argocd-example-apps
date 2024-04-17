@@ -12,7 +12,6 @@ spec:
   source:
     path: guestbook/manifests
     repoURL: 'git@github.com:ahilmathew/argocd-example-apps.git'
-    targetRevision: master
   project: default
   syncPolicy:
     automated:
